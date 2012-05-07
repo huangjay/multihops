@@ -13,14 +13,11 @@ import android.widget.TextView;
 public class P2PConnectionAdapter extends ArrayAdapter<P2PConnection> {
 	
 	Context cntxt = null;
-	int tvid;
 	ArrayList<P2PConnection> peerlist = null;
-	PeerHolder holder = null;
 
-	public P2PConnectionAdapter(Context c, int textViewResourceId, ArrayList<P2PConnection> pl) {
-		super(c, textViewResourceId,pl);
+	public P2PConnectionAdapter(Context c, ArrayList<P2PConnection> pl) {
+		super(c, R.layout.listview_peer_row,pl);
 		cntxt = c;
-		tvid = textViewResourceId;
 		peerlist = pl;
 	}
 	
@@ -41,11 +38,5 @@ public class P2PConnectionAdapter extends ArrayAdapter<P2PConnection> {
         return v;
 		
 	}
-	
-	static class PeerHolder
-    {
-        TextView peerName;
-    }
-	
 
 }
